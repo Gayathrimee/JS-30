@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Check box</title>
+    </head>
+
+    <body>
+        <div class="inbox">
+
+            <div class="item">
+                <input type="checkbox">
+                <p>This is an inbox layout.</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Check one time</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Hold down your Shift Key</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Check a lower item</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Everything inbetween should also be set to checked</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Try do it with out any libraries</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Just regular JavaScript</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Good Luck!</p>
+            </div>
+            <div class="item">
+                <input type="checkbox">
+                <p>Don't forget to tweet your result!</p>
+            </div>
+
+        </div>
+
+        <style>
+        html,body{
+            /* margin: 0; */
+            background: #330346;
+        }
+        .inbox{
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 300px;
+            /* color: #fff; */
+            margin: 50px auto;
+            height: 100%;
+            /* padding-inline: 10px; */
+            box-shadow: 1px 1px 20px #fff,
+                        inset 40px 2px 50px 20px #000;
+            /* transform: perspective(100px) rotate(1deg) scale(1.001); */
+        }
+        .item{
+            display: flex;
+            border-bottom: 0.25px solid #bdaeae;
+            width: 100%;
+            align-items: center;
+            /* gap: 1rem; */
+            /* padding: 10px; */
+        }
+        input{
+            /* padding: 10px; */
+            margin: 20px;
+        }
+        p{
+            border-left: 0.25px solid #b8b4b4;
+            width: 100%;
+            height: fit-content;
+            padding: 20px;
+            margin: 0;
+            transition: background 0.2s;
+            flex: 1;
+        }
+        /* .item:nth-child(even){
+            transform: perspective(100px) rotateX(3deg) translateX(2px) scale(1);
+        }
+        .item:nth-child(odd){
+            transform: perspective(100px) rotateX(-3deg) translateY(3px) scale(1);
+        } */
+          /* #checkbox{
+            border-right: 1px solid;
+            border-left: 1px solid;
+
+         } */
+        input:checked + p {
+      /* background: #F9F9F9; */
+        text-decoration: line-through;
+    }
+
+        </style>
+
+
+        <script src="checkbox.js"></script>
+    </body>
+    </html>

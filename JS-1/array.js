@@ -8,14 +8,14 @@ const inventors = [
     {first: 'Max', last: 'Planck', year: 1858, passed:1947},
 ];
 
-const people = ['Beck,Gleen', 'Becker, Carl', 'Brckett, Samuel', 'Beddoes,Mick',
-    'Beecher,Henry','Beethoven,Ludwig','Begin,Menachem','Belloc,Hilaire','Bellow,Saul',
-    'Benchley,Robert','Beneson,Peter','Ben-Gurion,David','Benjamin,Walter',
-    'Benn,Tony','Bennington,Chester','Benson,Leana','Bent,Silas','Bentson,Lloyd',
-    'Berger,Ric','Bergman,Ingmar','Berio,Luciano','Berle,Milton','Berlin,Irvin','Berne,Eric',
-    'Bernhard,Sandra','Berra,Yogi','Berry,Halle','Berry,Wendell','Bethea,Erin','Bevan,Aneurin',
-    'Bevel,Ken','Biden,Joseph','Bierce,Ambrose','Biko,Steve','Billings,Josh','Biondo,Frank',
-    'Birrell,Augustine','Black,Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'
+const people = ['Beck,Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick',
+    'Beecher, Henry','Beethoven, Ludwig','Begin, Menachem','Belloc, Hilaire','Bellow, Saul',
+    'Benchley,Robert','Beneson, Peter','Ben-Gurion, David','Benjamin, Walter',
+    'Benn,Tony','Bennington, Chester','Benson, Leana','Bent, Silas','Bentson, Lloyd',
+    'Berger, Ric','Bergman, Ingmar','Berio, Luciano','Berle, Milton','Berlin, Irvin','Berne, Eric',
+    'Bernhard, Sandra','Berra, Yogi','Berry, Halle','Berry, Wendell','Bethea, Erin','Bevan, Aneurin',
+    'Bevel, Ken','Biden, Joseph','Bierce, Ambrose','Biko, Steve','Billings, Josh','Biondo, Frank',
+    'Birrell, Augustine','Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'
 ];
 
 // Array.prototype.filter()
@@ -119,11 +119,53 @@ console.table(older);
 //  6. create a list of Boulevards in Pais that contain 'de' anywhere in the name 
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-const category = document.querySelector('.mw-category');
-const links = Array.from(category.querySelectorAll('all'));
-const de = links
-            .map(link => link.textContent)
-            .filter(streetName => streetName.includes)('de');
+// const category = document.querySelector('.mw-category');
+// const links = Array.from(category.querySelectorAll('a'));
+// const de = links
+//             .map(link => link.textContent)
+//             .filter(streetName => streetName.includes)('de');
 
 //7. sort Exercise
 // sort the people alphabetically by last name
+
+const alpha = people.sort(function(lastOne,nextOne){
+    const parts = lastOne.split(', ');
+    console.log(parts);
+});
+// this will print as array
+// so / (or)
+
+const beta = people.sort(function(lastOne,nextOne){
+    const [last,first] = lastOne.split(', ');
+    console.log(last,first);
+});
+// now we have to work with variables
+
+const gama = people.sort((lastOne,nextOne) => {
+    const [aLast,aFirst] = lastOne.split(', ');
+    const [bLast,bFirst] = nextOne.split(', ');
+    return aLast > bLast ? -1 : 1;
+});
+console.log(gama)
+
+// 8. Reduce Exercise
+// sum up the instances of each of these
+
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike',
+                'walk', 'car', 'van', 'car', 'truck', 'cycle'];
+
+const transport = data.reduce(function (obj,item){
+    console.log(item);
+    return obj;
+},{})
+
+// (or)
+
+const transportation = data.reduce((obj,item) => {
+    if(!obj[item]){
+        obj[item] = 0;
+    }
+    obj[item]++;
+    return obj;
+},{});
+console.log(transportation);
