@@ -51,3 +51,12 @@ video.addEventListener('pause',updateButton);
 toggle.addEventListener('click',togglePlay);
 
 skipButtons.forEach(button => button.addEventListener('click', skip));
+
+// hook up the event listners
+
+video.addEventListener('click', togglePlay);
+video.addEventListener('play',updateButton);
+video.addEventListener('pause',updateButton); 
+toggle.addEventListener('click',togglePlay);
+
+skipButtons.forEach(button => button.addEventListener('click', skip));
