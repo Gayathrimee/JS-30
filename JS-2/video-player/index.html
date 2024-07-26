@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Video Player</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="player">
+            <video src="video/652333414.mp4" mute autoplay class="player_video viewer"></video>
+
+            <div class="player_controls">
+
+                <div class="progress">
+                    <div class="progress_filled"></div>
+                </div>
+
+                <button class="player_button toggle" title="Toggle play"> ► </button>
+                <input type="range" name="volume"  class="play_slider"  min="0" max="1" step="0.05" value="1">
+                <input type="range" name="plabackRate" class="play_slider" min="0.5" max="2" step="0.1" value="1">
+                <button data-skip="-10" class="player_button">« 10s</button>
+                <button data-skip="25" class="player_button">25s »</button>
+                <button class="player_button fullscreen" title="Toggle play"> [] </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <!-- <script type="module" src="video-fullscreen.js"></script> -->
+    </body>
+</html>
