@@ -32,3 +32,4 @@ function handleUpdate(){
 
 inputs.forEach( input => input.addEventListener('change',handleUpdate));  // it doesn't change if drag with the mouse. so
 inputs.forEach( input => input.addEventListener('mousemove',handleUpdate));
+ 

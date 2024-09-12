@@ -1,0 +1,48 @@
+
+.panel > *{
+    flex: 1 0 auto;
+    
+    /* 1. flex-grow 2. flex-shrink 3. flex-basis
+    
+    1. flex-grow:1; = This specifies how much the flex item will frow relative to the other items in the flex container.
+    A value of 1 means that the item can grow to fill up the available space, proportionally to other items that also have a flex-grow value
+
+    2.  flex-shrink:0; = This specifies how much the flex item will shrink relative to the other items in the flex container. 
+    A value of 0 means that the item will not shrink at all if there is not enough space. It will maintain its size even if the container is too small.
+
+    3. flex-basis:auto; = This specifies the intial size of the flex item before any growing or shrinking happens. A value of 'auto' means that the item's size is based on its content
+    or any other width specified. It uses the item's content or its specified size as the base size.
+    */
+}
+
+/* eg:-
+html:
+
+ <div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+
+---------------------------------
+css:
+
+.container {
+  display: flex;
+}
+.item {
+  flex: 1 0 auto;
+}
+
+* Each .item will grow equally to fill the available space in the .container because flex-grow is set to 1.
+* Each .item will not shrink when the container's width is reduced because flex-shrink is set to 0.
+* Each .item will have its have its base size determined by its content or other css ruless due to flex-basis:auto 
+
+__________summary_______________
+
+flex-grow 1: The item will grow to fill available space, distributing extra space evenly among flex items with the same flex-grow value.
+flex-shrink 0: The item will not shrink when there is not enough space in the flex container.
+flex-basis auto: The item's initial size is based on its content or soecified size, not influenced by the flex-grow or flex-shrink properties.
+
+using flex:1 0 auto; is common when you want items to grow equally in a flex container but maintain their instrinsic size without shrinking.
+*/
